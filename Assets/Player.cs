@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public GameObject hook;
+    [SerializeField] private GameObject hook;
 
     Rigidbody2D rb;
     GameObject player;
@@ -24,13 +24,14 @@ public class Player : MonoBehaviour
     
     private void PlayerControl()
     {
-        if (Input.GetMouseButton(0))
+        /* if (Input.GetMouseButton(0))
         {
             HookFire();
         }
+        */
         float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+       // float moveVertical = Input.GetAxis("Vertical");
+        Vector2 movement = new Vector2(moveHorizontal, 0);
         rb.AddForce(movement * speed) ;
     }
     
